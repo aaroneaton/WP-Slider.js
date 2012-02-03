@@ -3,7 +3,7 @@
  * Plugin Name: WP Slider.js
  * Plugin URI: http://www.channeleaton.com
  * Description: A feature slider that incorporates Slider.js. You can find Slider.js here: http://greweb.fr/slider/
- * Version: 1.0
+ * Version: 0.1
  * Author: J. Aaron Eaton
  * Author URI: http://www.channeleaton.com
  * License: Apache 2.0
