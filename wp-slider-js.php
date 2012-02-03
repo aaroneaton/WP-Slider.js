@@ -46,6 +46,75 @@
 	
 	}
 	
+	// Set up the image query. Will retrieve featured images from the specified category.
+	public function wpsjs_show_slider( $name, $category, $image_limit = 5, $height = 800, $width = 600, $duration = 5000 ) {
+	
+		// Query for the latest featured posts
+		global $post;
+		$args = array(
+		  'category' => $category,
+		  'numberposts' => $image_limit,
+		  'post_status' => 'publish'
+		);
+
+		$slider_posts = get_posts( $args );
+		
+		// Declare empty array for JSON processing
+		$images = array();
+
+		foreach( $slider_posts as $post) : setup_postdata($post);
+			// Get the featured image src
+			$image_id = get_post_thumbnail_id();
+			$image_url = wp_get_attachment_image_src( $image_id, 'full' );
+			$image_url = $image_url[0];
+
+			// Set post title to variable
+			$ftitle = $post->post_title;
+
+			// Set post permalink to variable
+			$flink = get_permalink();
+
+			$arr = array('src' => $image_url, 'name' => $ftitle, 'link' => $flink );
+
+			array_push( $images, $arr );    
+
+		endforeach;
+
+		$slides = json_encode($images);
+
+		// Now to call Slider.js!
+		?>
+		<script type="text/javascript">
+		jQuery(function($) {
+		  var slider = new Slider($("#<?php echo $name; ?>"));
+
+		  slider.setSize( <?php echo $height; ?>, <?php echo $width; ?> );
+
+		  slider.setPhotos(
+			  <?php echo $slides; ?>
+			);
+
+		  slider.setDuration( <?php echo $duration; ?> );
+
+		});
+
+		</script>
+		
+		<div id="<?php echo $name; ?>">
+			<?php print_r( $height ); ?>
+		</div>
+	<?php
+	}
+	
  } // Class: WPSliderJS
  
  $wpSliderJs = new WPSliderJS();
+ 
+ 
+ // Set up the template tag
+ function wp_slider_js( $name, $category, $image_limit = 5, $height = 800, $width = 600, $duration = 5000 ) {
+ 
+	$wpsjs_add_slider = new WPSliderJS;
+	echo $wpsjs_add_slider->wpsjs_show_slider( $name, $category, $image_limit, $height, $width, $duration );
+ 
+ }
