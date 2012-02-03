@@ -9,11 +9,8 @@
  * License: Apache 2.0
  */
  
- 
+
  class WPSliderJS {
- 
-	protected $plugin_url;
-	
  
 	public function __construct() {
 	
@@ -21,15 +18,9 @@
 	
 	}
 	
-	public function shortcode() {
-	
-	
-	
-	}
-	
- }
+ } //WPSliderJS
  
- $wpsliderjs = new WPSliderJS();
+ $wpSliderJs = new WPSliderJS();
  
  
  
