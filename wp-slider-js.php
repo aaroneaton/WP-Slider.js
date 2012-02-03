@@ -9,7 +9,8 @@
  * License: Apache 2.0
  */
  
-
+new WPSliderJS;
+ 
  class WPSliderJS {
  
 	public function __construct() {
@@ -108,13 +109,13 @@
 	
  } // Class: WPSliderJS
  
- $wpSliderJs = new WPSliderJS();
+
  
  
  // Set up the template tag
  function wp_slider_js( $name, $category, $image_limit = 5, $height = 800, $width = 600, $duration = 5000 ) {
  
-	$wpsjs_add_slider = new WPSliderJS;
-	echo $wpsjs_add_slider->wpsjs_show_slider( $name, $category, $image_limit, $height, $width, $duration );
+	$wpsjs_new_slider = new WPSliderJS;
+	echo $wpsjs_new_slider->wpsjs_show_slider( $name, $category, $image_limit, $height, $width, $duration );
  
  }
