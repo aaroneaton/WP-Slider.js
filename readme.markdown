@@ -12,6 +12,7 @@ A photo/feature slider for WordPress using [Slider.js](http://sliderjs.org/) by 
 
 ### Options ###
 Currently there are only six options to set:
+
 * $name (required) - This should be a unique class name.
 * $category (required) - This is the __category ID__, not the category slug.
 * $image_limit - You can limit the query results. Defaults to 3.
