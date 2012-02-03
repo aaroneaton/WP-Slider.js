@@ -14,9 +14,11 @@
  
 	public function __construct() {
 		
+		$this->plugin_url = WP_PLUGIN_URL . '/wp-slider-js';
+		
 		// Set up actions to enqueue scripts & styles
 		add_action( 'wp_enqueue_scripts', array( &$this, 'wpsjs_js_enqueue' ) );
-		add_action( 'wpprint_styles', array( &$this, 'wpsjs_css_enqueue' ) );
+		add_action( 'wp_print_styles', array( &$this, 'wpsjs_css_enqueue' ) );
 	
 	}
 	
@@ -30,7 +32,7 @@
 
 		// Enqueue slider.js
 		wp_deregister_script( 'slider' );
-		wp_register_script( 'slider', WP_PLUGIN_URL . '/js/slider.min.js' );
+		wp_register_script( 'slider', $this->plugin_url . '/js/slider.min.js' );
 		wp_enqueue_script( 'slider' );
 	
 	}
@@ -39,9 +41,9 @@
 	public function wpsjs_css_enqueue() {
 	
 		wp_deregister_style( 'slider_style' );
-		wp_register_style( 'slider_style', WP_PLUGIN_URL . '/css/slider.min.css' );
+		wp_register_style( 'slider_style', $this->plugin_url . '/css/slider.min.css' );
 		wp_enqueue_style( 'slider_style' );
-		
+	
 	}
 	
  } // Class: WPSliderJS
