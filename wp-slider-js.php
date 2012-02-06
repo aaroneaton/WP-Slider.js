@@ -102,7 +102,7 @@ new WPSliderJS;
 		</script>
 		
 		<div id="<?php echo $name; ?>">
-			<?php print_r( $height ); ?>
+
 		</div>
 	<?php
 	}
