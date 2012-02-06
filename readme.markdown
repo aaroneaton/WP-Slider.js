@@ -6,7 +6,7 @@ A photo/feature slider for WordPress using [Slider.js](http://sliderjs.org/) by 
 * Easy-to-use template tag.
 
 ## Installation ##
-1. Download the .zip of this repository [here](https://github.com/channeleaton/WP-Slider.js/zipball/master).
+1. Download the .zip of this repository [here](https://github.com/channeleaton/WP-Slider.js/downloads).
 2. In your WordPress admin page, go to Plugins->Add New->Upload and upload the .zip file.
 3. There is no third step.
 
@@ -31,3 +31,25 @@ Here we are calling the template tag where the name is `slider_test`, the catego
 
 ## Known Issues ##
 * If you are using W3TotalCache, sliders will not work unless JS minifying is disabled.
+
+## Upcoming Features ##
+* Allow user to select transitions
+* Allow user to select theme
+* Flickr integration
+* Use shortcodes inside posts, pages, & text widgets
+* Make the parameters easier to set
+
+## License ##
+Copyright 2012 J. Aaron Eaton
+
+   Licensed under the Apache License, Version 2.0 \(the "License"\);
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       <http://www.apache.org/licenses/LICENSE-2.0<
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
