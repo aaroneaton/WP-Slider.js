@@ -28,3 +28,6 @@ Use the template tag `wp_slider_js()` anywhere in your theme via hard-coding in 
 <?php wp_slider_js( 'slider_test', 218, 4, 400, 150, 6000 ); ?>
 ```
 Here we are calling the template tag where the name is `slider_test`, the category ID is `218`, the image limit is `4`, height is `400`, width is `150`, and the duration is `6000`.
+
+## Known Issues ##
+* If you are using W3TotalCache, sliders will not work unless JS minifying is disabled.
